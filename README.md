@@ -99,13 +99,13 @@ Pruebas ejecutadas por el estudiante en Ubuntu/WSL y QEMU el 29 de octubre de 20
 
 | Comprobación | Resultado registrado |
 |---|---|
-| pgtbltest | 11 de 11; PASÓ; 95 segundos incluyendo compilación |
+| pgtbltest | 11 de 11; PASÓ; 58 segundos incluyendo compilación |
 | Formato de vmprint | OK |
-| usertests -q | ALL TESTS PASSED; PASÓ; 149 segundos |
+| usertests -q | ALL TESTS PASSED; PASÓ; 130 segundos |
 
 Las salidas completas originales están en pruebas/. Los fallos de acceso provocados deliberadamente por las pruebas no son panics del kernel. La suite completa no reportó pérdida de páginas libres.
 
-La comprobación inicial limpia se hizo sobre una exportación del commit base. Se regenerará la evidencia en una reconstrucción asociada al commit de estas fuentes y se incorporarán los logs en un commit posterior, sin editar manualmente sus encabezados. El commit indicado en los logs identifica la versión probada; el commit posterior añade la evidencia.
+Ambas evidencias identifican el commit de fuentes `6cbaa95`. Se generaron en una reconstrucción de xv6 con esas fuentes, sin cambios en los archivos versionados. El commit posterior incorpora los logs y actualiza esta documentación, sin modificar la implementación ni las pruebas. Los registros se conservan sin editar manualmente sus encabezados.
 
 # Decisiones de diseño
 
@@ -120,11 +120,11 @@ La comprobación inicial limpia se hizo sobre una exportación del commit base. 
 # Limitaciones conocidas
 
 - El enlazador emite una advertencia LOAD RWX del kernel. Se reprodujo exactamente en una compilación del commit original sin cambios: no fue introducida por este proyecto. La compilación completa también registra una advertencia RWX de user/_forktest, cuyo fuente y regla de enlace no fueron modificados; la compilación de referencia solo construyó el kernel y no comprobó ese binario. No se han ocultado advertencias. Debe aclararse con el docente si estas advertencias de enlace preexistentes se exceptúan del requisito de compilación sin advertencias.
-- La integración sobre una copia limpia fue verificada: pasaron ambas suites y el verificador de formato. Se generará la evidencia definitiva identificando el commit de las fuentes antes de publicar la entrega.
+- La integración sobre una copia limpia fue verificada: pasaron ambas suites y el verificador de formato. Las evidencias incluidas identifican el commit de fuentes `6cbaa95`.
 - Si copyout falla, pgaccess devuelve -1, pero los bits consultados ya fueron limpiados; la operación no ofrece reversión transaccional. El enunciado no prescribe conservarlos en ese caso.
 - No se implementan Copy-on-Write, superpáginas ni reemplazo de páginas, fuera del alcance solicitado.
 - Los integrantes deben revisar estas explicaciones y practicar la sustentación antes de entregar.
 
 # Declaración de uso de IA
 
-Se utilizó OpenAI Codex como apoyo para analizar el enunciado y las pruebas, preparar una primera implementación, revisar las salidas reales y redactar este borrador de documentación. Las pruebas se ejecutaron en Ubuntu/WSL por el estudiante. Los integrantes deben revisar, comprender y poder justificar el código y la documentación, y asumen plena responsabilidad académica sobre el contenido entregado.
+Se utilizó OpenAI Codex como apoyo para analizar el enunciado y las pruebas, preparar una primera implementación, revisar las salidas reales y redactar esta documentación. Las pruebas se ejecutaron en Ubuntu/WSL por el estudiante. Los integrantes deben revisar, comprender y poder justificar el código y la documentación, y asumen plena responsabilidad académica sobre el contenido entregado.
