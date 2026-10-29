@@ -127,4 +127,4 @@ Ambas evidencias identifican el commit de fuentes `6cbaa95`. Se generaron en una
 
 # Declaración de uso de IA
 
-Se utilizó OpenAI Codex como apoyo para analizar el enunciado y las pruebas, preparar una primera implementación, revisar las salidas reales y redactar esta documentación. Las pruebas se ejecutaron en Ubuntu/WSL por el estudiante. Los integrantes deben revisar, comprender y poder justificar el código y la documentación, y asumen plena responsabilidad académica sobre el contenido entregado.
+Se utilizó Chatgpt como apoyo para entender lo que no entendiamos del enunciado del proyecto y entender errores frecuentes que nos daban y no sabiamos como solucionar. Las pruebas se ejecutaron en Ubuntu/WSL por el estudiante. Los integrantes deben revisar, comprender y poder justificar el código y la documentación, y asumen plena responsabilidad académica sobre el contenido entregado.
